@@ -1,0 +1,13 @@
+{
+  "name": "smart-hospital",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm install --prefix client && npm run build --prefix client"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0"
+  },
+  "engines": { "node": ">=18" }
+}
