@@ -1,0 +1,17 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/javascript-node:20
+    volumes:
+      - ..:/workspaces/smart-hospital:cached
+    command: sleep infinity
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/smarthospital
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:

@@ -3,11 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm install --prefix client && npm run build --prefix client"
+    "build": "npm install --prefix client && npm run build --prefix client",
+    "dev": "concurrently -k -n api,web -c blue,green \"node server/dev.js\" \"npm run dev --prefix client\""
   },
   "dependencies": {
     "express": "^4.19.2",
     "mongoose": "^8.4.0"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

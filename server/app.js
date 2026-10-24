@@ -19,7 +19,7 @@ app.use('/api', async (req, res, next) => {
     console.error(e);
     res.status(500).json({
       error: e.code === 'NO_URI'
-        ? 'The database is not connected yet. Add MONGODB_URI in the Vercel project settings, then redeploy.'
+        ? 'The database is not connected yet. Add MONGODB_URI (in the Vercel project settings, or in your .env file), then redeploy or restart.'
         : 'Cannot reach the database. Check the MongoDB Atlas connection string and Network Access settings.',
     });
   }
